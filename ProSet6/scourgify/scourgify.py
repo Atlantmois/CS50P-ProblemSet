@@ -12,7 +12,7 @@ def main():
     test_arg()
     try:
         with open(sys.argv[1]) as before,\
-             open(sys.argv[2], "w", newline="") as after: #if newline
+             open(sys.argv[2], "w", newline="") as after: # you don't need newline argument on linux or mac
                 reader = csv.DictReader(before)
                 writer = csv.DictWriter(after, fieldnames=["first", "last", "house"])
                 writer.writeheader()
